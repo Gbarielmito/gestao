@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="assets/logo-samu-ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="maps.css">
+    <title>PAINEL EMERGÊNCIA SAMU - Mapa</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo-text">
+                <img src="./assets/logo-samu.png" alt="Logo" class="logo">
+                <p class="sidebar-text">PAINEL EMERGÊNCIA SAMU</p>
+            </div>
+
+            <nav>
+                <ul class="infosidebar">
+                    <li style="background-color: #444; border-radius: 10px;"><a href="home.html"><i class="fa-solid fa-truck"></i> Veículos</a></li>
+                    <li><a href="maps.html"><i class="fa-solid fa-map"></i> Mapa</a></li>
+                    <li><a href="chamados.html"><i class="fa-solid fa-phone-volume"></i> chamados</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <nav class="status-nav">
+            <div class="status-item available">
+                <span class="status-dot-2 green"></span>
+                <p>Disponível</p>
+            </div>
+            <div class="status-item in-route">
+                <span class="status-dot-2 blue"></span>
+                <p>Em Rota</p>
+            </div>
+            <div class="status-item in-progress">
+                <span class="status-dot-2 yellow"></span>
+                <p>Em Andamento</p>
+            </div>
+            <div class="status-item unavailable">
+                <span class="status-dot-2 red"></span>
+                <p>Indisponível</p>
+            </div>
+        </nav>
+        
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Mapa dos veículos</h1>
+            </header>
+
+            <div class="container-maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18546.071017628747!2d-38.960768119845476!3d-12.259702608738019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1731172281860!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+        </main>
+        
+    </div>
+
+</body>
+</html>

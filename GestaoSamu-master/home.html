@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="assets/logo-samu-ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>PAINEL EMERGÊNCIA SAMU - Veículos</title>
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo-text">
+                <img src="./assets/logo-samu.png" alt="Logo" class="logo">
+                <p class="sidebar-text">PAINEL EMERGÊNCIA SAMU</p>
+            </div>
+
+            <nav>
+                <ul class="infosidebar">
+                    <li style="background-color: #444; border-radius: 10px;"><a href="home.html"><i class="fa-solid fa-truck"></i> Veículos</a></li>
+                    <li><a href="maps.html"><i class="fa-solid fa-map"></i> Mapa</a></li>
+                    <li><a href="chamados.html"><i class="fa-solid fa-phone-volume"></i> chamados</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <nav class="status-nav">
+            <div class="status-item available">
+                <span class="status-dot-2 green"></span>
+                <p>Disponível</p>
+            </div>
+            <div class="status-item in-route">
+                <span class="status-dot-2 blue"></span>
+                <p>Em Rota</p>
+            </div>
+            <div class="status-item in-progress">
+                <span class="status-dot-2 yellow"></span>
+                <p>Em Andamento</p>
+            </div>
+            <div class="status-item unavailable">
+                <span class="status-dot-2 red"></span>
+                <p>Indisponível</p>
+            </div>
+        </nav>
+        
+        <!-- Botão Flutuante -->
+        <button class="floating-btn" onclick="openVeiculoPopup()">+</button>
+
+        <!-- Modal para Seleção de Veículo -->
+        <div id="modal-veiculos" class="modal-veiculos">
+            <div class="modal-veiculos-content">
+                <span class="close" onclick="closeVeiculoPopup()">&times;</span>
+                <h2>Selecione o Tipo de Veículo</h2>
+                <select id="vehicleType">
+                    <option value="Ambulância Tipo A">Ambulância Tipo A</option>
+                    <option value="Ambulância Tipo B">Ambulância Tipo B</option>
+                    <option value="Ambulância Tipo C">Ambulância Tipo C</option>
+                    <option value="Ambulância Tipo D">Ambulância Tipo D</option>
+                    <option value="MOTOLANCIA">Motolância</option>
+                    <option value="HELICÓPTERO">Helicóptero</option>
+                </select>
+                <button onclick="addVehicle()">Adicionar Veículo</button>
+            </div>
+        </div>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Veículos de emergência</h1>
+            </header>
+
+            <div id="popupModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <div class="chat-container">
+                        <!-- Selecione o usuário -->
+                        <div class="user-selection">
+                          <label for="userType">Escolha seu tipo:</label>
+                          <select id="userType">
+                            <option value="base192">Base 192</option>
+                            <option value="ambulancia">Ambulância</option>
+                          </select>
+                        </div>
+                    
+                        <!-- Caixa de chat -->
+                        <div class="chat-box" id="chatBox"></div>
+                    
+                        <!-- Campo de mensagem -->
+                        <input type="text" id="messageInput" placeholder="Digite sua mensagem..." />
+                        <button id="sendButton">Enviar</button>
+                      </div>
+                </div>
+            </div>
+
+            <section class="card-container">
+                <article class="card">
+                    <div class="title-container">
+                        <h3>1. AMBULÂNCIA TIPO A</h3>
+                        <span class="status-dot"></span>
+                    </div>
+
+                    <div class="content-p">
+                        <p>Ambulância de transporte</p>
+                        <p>1 Motorista</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+
+                    <img src="..//assets/AMBULANCIA.png" alt="AMBULÂNCIA 1" width="200PX">
+
+                    <div class="icon-container">
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+                        
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>2. AMBULÂNCIA TIPO B</h3>
+                        <span class="status-dot"></span>
+                    </div>
+
+                    <div class="content-p">
+                        <p>Ambulância de suporte básico</p>
+                        <p>1 Motorista</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+
+                    <img src="..//assets/AMBULANCIA.png" alt="AMBULÂNCIA 2" width="200PX">
+
+                    <div class="icon-container">
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>3. AMBULÂNCIA TIPO B</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Ambulância de suporte básico</p>
+                        <p>1 Motorista</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+
+                    <img src="..//assets/AMBULANCIA.png" alt="AMBULÂNCIA 3" width="200PX">
+
+                    <div class="icon-container">
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>4. AMBULÂNCIA TIPO C</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Ambulância de suporte básico</p>
+                        <p>1 Motorista</p>
+                        <p>1 Técnico de enfermagem</p>
+                        <p>Auxílio de outros profissionais</p>
+                    </div>
+
+                    <img src="..//assets/AMBULANCIA.png" alt="AMBULÂNCIA 4" width="200PX">
+
+                    <div class="icon-container">
+
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>5. AMBULÂNCIA TIPO C</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Ambulância de suporte básico</p>
+                        <p>1 Motorista</p>
+                        <p>1 Técnico de enfermagem</p>
+                        <p>Auxílio de outros profissionais</p>
+                    </div>
+
+                    <img src="..//assets/AMBULANCIA.png" alt="AMBULÂNCIA 5" width="200PX">
+
+                    <div class="icon-container">
+
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>6. AMBULÂNCIA TIPO D</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Ambulância de suporte avançado</p>
+                        <p>1 Motorista</p>
+                        <p>1 Médico</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+
+                    <img src="..//assets/AMBULANCIA.png" alt="AMBULÂNCIA 6" width="200PX">
+
+                    <div class="icon-container">
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>7. AMBULÂNCIA TIPO D</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                        
+                    <div class="content-p">
+                        <p>Ambulância de suporte avançado</p>
+                        <p>1 Motorista</p>
+                        <p>1 Médico</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+
+                    <img src="..//assets/AMBULANCIA.png" alt="MOTOLANCIA 1" width="200PX">
+
+                    <div class="icon-container">
+
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>8. AMBULÂNCIA TIPO D</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Ambulância de suporte avançado</p>
+                        <p>1 Motorista</p>
+                        <p>1 Médico</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+
+                    <img src="..//assets/AMBULANCIA.png" alt="MOTOLANCIA 2"width="200PX">
+
+                    <div class="icon-container">
+
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>9. MOTOLANCIA 1</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Moto para primeiros socorros</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+
+                    <img src="..//assets/MOTOLANCIA.png" alt="MOTOLANCIA 3" width="200PX">
+                    
+                    <div class="icon-container">
+
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>10. MOTOLANCIA 2</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Moto para primeiros socorros</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+
+                    <img src="..//assets/MOTOLANCIA.png" alt="MOTOLANCIA 4" width="200PX">
+
+                    <div class="icon-container">
+
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="title-container">
+                        <h3>11. MOTOLANCIA 3</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Moto para primeiros socorros</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+                    
+                    <img src="..//assets/MOTOLANCIA.png" alt="MOTOLANCIA 5" width="200PX">
+
+                    <div class="icon-container">
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="title-container">
+                        <h3>12. HELICÓPTERO 1</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                    
+                    <div class="content-p">
+                        <p>Aeronave de resgate</p>
+                        <p>1 Piloto</p>
+                        <p>1 Médico</p>
+                        <p>1 Técnico de enfermagem</p>
+                    </div>
+                    
+                    <img src="..//assets/HELICOPTERO.png" alt="HELICOPTERO 1" width="200PX">
+
+                    <div class="icon-container">
+                        <p>
+                            <a href="maps.html" class="no-decoration">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+                        </p>
+
+                        <p onclick="openPopup()"><i class="fa-solid fa-comment"></i></p>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+    </div>
+      <div id="popupModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <h2>Pop-up de Informação</h2>
+                    <p>Esta é uma mensagem do pop-up.</p>
+                </div>
+            </div>
+            <script src="firebase.js" type="module"></script>
+            <script src="chat.js" type="module"></script>
+            <script src="addveiculos.js" defer></script>
+            <script src="script.js"></script>
+    </div>
+</body>
+</html>

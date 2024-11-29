@@ -1,0 +1,412 @@
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'poppins', sans-serif;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 15%;
+    background-color: #303030;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infosidebar {
+    font-size: 20px;
+}
+
+.infosidebar li a {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.sidebar .infosidebar {
+    list-style-type: none;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.sidebar .infosidebar li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 15px;
+}
+
+.sidebar .infosidebar li a:hover {
+    background-color: #444;
+}
+
+.infosidebar i {
+    margin-right: 10px;
+}
+
+/* Estilo da logo e texto */
+.logo-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.logo {
+    width: 80px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Estilos para a barra de navegação na parte inferior */
+.status-nav {
+    display: flex;
+    justify-content: space-around; /* Distribui os itens igualmente */
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    right: 0; /* Garante que a barra fique colada à direita */
+    width: 85%; /* Ajuste a largura conforme necessário */
+    height: 50px;
+    z-index: 999; /* Para garantir que fique acima de outros elementos */
+}
+
+
+/* Estilo dos itens do status */
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.status-item p {
+    font-size: 40px;
+}
+
+/* Estilo para as bolinhas */
+.status-dot-2 {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+/* Cores para os diferentes status */
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+/* Estilo do texto (se necessário) */
+.status-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Conteúdo principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Card Container com CSS Grid de 3 colunas */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Estilo dos Cards */
+.card {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 190px;
+}
+
+.content-p {
+    margin-top: 5px;
+    font-size: 16px;
+    width: 50%;
+    height: 80px;
+}
+
+.card img {
+    max-width: 200px;
+    float: right; /* empurra a imagem para o canto direito */
+    margin-top: -60px;
+}
+
+/* Container de ícones no canto inferior esquerdo */
+.icon-container {
+    position: relative;
+    bottom: 10px;
+    left: 0px;
+    top: 15%;
+    display: flex;
+    gap: 15px;
+    width: 0%;
+    font-size: 35px;
+    color: #000000; /* Ajuste de cor conforme necessário */
+}
+
+.icon-container:hover {
+    cursor: pointer;
+}
+
+/* Remover o sublinhado do link */
+.no-decoration i {
+    text-decoration: none;
+    color: black;
+}
+
+/* Estilo da div que contém o título e a bolinha */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantém a bolinha afastada à direita */
+    padding-right: 0px; /* Ajuste para afastar a bolinha */
+}
+
+/* Estilo da bolinha verde */
+.status-dot {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+/* CSS para o modal */
+.modal {
+    margin-top: 100px;
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 750px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0); /* Fundo transparente */
+}
+
+.modal-content {
+    
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+
+/*cht*/
+.chat-container {
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .user-selection {
+    padding: 10px;
+    background-color: #e9e9e9;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .chat-box {
+    margin-right: 70px;
+    padding: 10px;
+    overflow-y: scroll;
+    flex-grow: 1;
+    border-bottom: 1px solid #ccc;
+    max-height: 400px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .user-message {
+    background-color: #DCF8C6;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    max-width: 80%;
+    align-self: flex-end;
+  }
+  
+  .other-message {
+    background-color: #E9E9EB;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    max-width: 80%;
+    align-self: flex-start;
+  }
+  
+  /* Estilo para o botão flutuante */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #28a745; /* Cor verde */
+    color: white;
+    font-size: 30px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.floating-btn:hover {
+    background-color: #218838; /* Cor verde mais escura no hover */
+}
+
+/* Estilo para o modal de veículos */
+.modal-veiculos {
+    display: none; /* Inicialmente o modal está escondido */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 700px;
+    color: white;
+    font-size: 14px;
+}
+
+.modal-content-veiculos {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.close-veiculos {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-veiculos:hover,
+.close-veiculos:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.vehicle-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 100px; /* Adiciona espaço acima da imagem */
+    margin-bottom: 10px;
+    padding-top: 100px;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}

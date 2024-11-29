@@ -1,0 +1,135 @@
+/*CONTAINER CHAMADA */
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+.containerC{
+    padding: 10px;
+}
+.container-chamada{
+    margin: 0px;
+    display: flex;
+    border-radius: 20px;
+    border: 2px solid #444;
+    width: 175vh;
+    height: 98vh;
+}
+
+.container-card{
+    width: 360px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 2px solid #444;
+    padding: 15px;
+}
+
+.container-chat{
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.container-chat .head1{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color:#333 ;
+    width: 100%;
+    height: 80px;
+}
+
+.container-chat .head1 i{
+    margin-left: 10px;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    float: right;
+}
+
+.container-chat .head1 i:hover{
+    border-radius: 50px;
+    background-color: white;
+    color: #444;
+}
+
+
+.container-chat .chat1{
+    background-color:rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 100%;
+    height: 83vh;
+}
+
+.container-chat .footer1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#333 ;
+    border-radius: 5px;
+    width: 100%;
+    height: 80px;
+}
+
+.container-chat .footer1 input{
+    width: 80vh;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.container-chat .footer1 i {
+    margin-left: 50vh;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+}
+
+.card1 {
+    cursor: pointer;
+    margin-top: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 320px;
+}
+
+.card1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card1 h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card1 p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.sidebar {
+    width: 15%;
+    background-color: #303030;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.line{
+    border: 2px solid #444;
+}
+
+
